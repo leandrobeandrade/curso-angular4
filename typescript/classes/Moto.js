@@ -20,7 +20,7 @@ var Moto = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Moto.prototype.acelerar = function () {
-        this.velocidade = this.velocidade + 50;
+        this.velocidade = this.velocidade + 50; // sobrescreveu o método acelerar da classe Veiculo
     };
     return Moto;
 }(Veiculo_1["default"]));
