@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var Carro_1 = require("./Carro");
+var Moto_1 = require("./Moto");
+var carro = new Carro_1["default"]('Veloster', 3);
+carro.acelerar();
+carro.acelerar();
+var moto = new Moto_1["default"]();
+moto.acelerar();
+moto.acelerar();
+console.log(carro);
+console.log(moto);
