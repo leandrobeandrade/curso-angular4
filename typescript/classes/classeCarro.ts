@@ -67,8 +67,8 @@ class Pessoa {
         return this.carroPref
     }
 
-    public comprarCarro(carro: string): void {
-        
+    public comprarCarro(carro: any): void {
+        this.carro = carro
     }
 
     public dizerCarroPossui(): any {
@@ -77,4 +77,4 @@ class Pessoa {
 }
 
 let pessoa = new Pessoa('Fulano', 'Captiva')
-console.log(pessoa)
+console.log(pessoa.dizerCarroPref())

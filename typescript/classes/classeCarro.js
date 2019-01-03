@@ -48,6 +48,7 @@ var Pessoa = /** @class */ (function () {
         return this.carroPref;
     };
     Pessoa.prototype.comprarCarro = function (carro) {
+        this.carro = carro;
     };
     Pessoa.prototype.dizerCarroPossui = function () {
         return this.carro;
@@ -55,4 +56,4 @@ var Pessoa = /** @class */ (function () {
     return Pessoa;
 }());
 var pessoa = new Pessoa('Fulano', 'Captiva');
-console.log(pessoa);
+console.log(pessoa.dizerCarroPref());
