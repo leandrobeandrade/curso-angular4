@@ -10,7 +10,6 @@ import { FRASE } from './frase.mock';
 export class PainelComponent implements OnInit {
 
   frases: Frase[] = FRASE;
-  instrucao: string = 'Traduza a frase:';
   respostas: string = '';
 
   rodada: number = 0;
