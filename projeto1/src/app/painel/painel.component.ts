@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASE } from './frase.mock';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-painel',
@@ -21,6 +20,10 @@ export class PainelComponent implements OnInit {
   
   tentativa: number = 3;
 
+  mostraErro: boolean = false;
+
+  icones: string;
+
   constructor() {
     //this.rodadaFrase = this.frases[this.rodada];         -> foi transformado em método por se repetir
     this.atualizaRodada();
@@ -29,16 +32,19 @@ export class PainelComponent implements OnInit {
 
   atualizaResposta(evento: Event): void {
     this.respostas  = (<HTMLInputElement>evento.target).value;
-  //  console.log(this.respostas);
+    //console.log(this.respostas);
   }
 
   verificaResposta(evento: Event): void {
 
     if(this.rodadaFrase.frasePt == this.respostas) {
-      alert('Tradução correta.')
     
       //atualiza a rodada
       this.rodada++;
+
+      if(this.rodada > 3) {
+        alert("PARABÉNS... Você concluiu com sucesso as traduções!")
+      }
 
       //atualiza rodada
       //this.rodadaFrase = this.frases[this.rodada];        -> foi transformado em método por se repetir
@@ -46,13 +52,22 @@ export class PainelComponent implements OnInit {
 
       //atualiza progresso
       this.progresso = this.progresso + (100 / this.frases.length);
+
+      //esconde o alert de erro
+      this.mostraErro = false;
+
+      //limpa textarea
+      this.respostas = ''
       
     } else {
       //diminui numero de tentativas
       this.tentativa--;
 
-      if(this.tentativa == -1) {
-        alert('Tradução errada')
+      //mostra o alert de erro
+      this.mostraErro = true;
+
+      if(this.tentativa == -1) {                              // sem mais quantidade de tentativas
+        this.respostas = '';
       }
     }
   }
@@ -60,9 +75,6 @@ export class PainelComponent implements OnInit {
   atualizaRodada(): void {
     //atualiza o objeto rodadaFrase
     this.rodadaFrase = this.frases[this.rodada];
-
-    //limpa textarea
-    this.respostas = ''
   }
 
   ngOnInit() {
