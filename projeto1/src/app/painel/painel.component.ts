@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASE } from './frase.mock';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-painel',
@@ -17,6 +18,8 @@ export class PainelComponent implements OnInit {
   rodadaFrase: Frase;
 
   progresso: number = 0;
+  
+  tentativa: number = 3;
 
   constructor() {
     //this.rodadaFrase = this.frases[this.rodada];         -> foi transformado em método por se repetir
@@ -45,7 +48,12 @@ export class PainelComponent implements OnInit {
       this.progresso = this.progresso + (100 / this.frases.length);
       
     } else {
-      alert('Tradução errada')
+      //diminui numero de tentativas
+      this.tentativa--;
+
+      if(this.tentativa == -1) {
+        alert('Tradução errada')
+      }
     }
   }
 

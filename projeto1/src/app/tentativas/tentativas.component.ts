@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tentativas',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tentativas.component.scss']
 })
 export class TentativasComponent implements OnInit {
+
+  @Input() tentativas: number;                              // para externalizar a variável tentativa
 
   constructor() { }
 
