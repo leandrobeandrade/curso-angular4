@@ -15,7 +15,7 @@
 
         <div class="form-group">
           <textarea class="form-control" rows="3" (input)="atualizaResposta($event)"
-            [value]="respostas" [disabled]="tentativa == -1">
+            [value]="respostas" [disabled]="tentativa == -1" #textos>
           </textarea>
         </div>
       </div>
@@ -24,7 +24,7 @@
       <div class="col">
         <span class="alert alert-danger" *ngIf="mostraErro">Tradução Errada</span>
         <button class="btn btn-primary float-right" (click)="verificaResposta()" 
-          [disabled]="tentativa == -1">Verificar
+          [disabled]="respostas.length < 1">Verificar
         </button>
       </div>
     </div>

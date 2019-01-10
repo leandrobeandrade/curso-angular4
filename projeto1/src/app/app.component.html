@@ -1,4 +1,39 @@
 <router-outlet></router-outlet>
-
+     
 <app-topo></app-topo>
-<app-painel></app-painel>
+
+<div *ngIf="jogoEmAndamento; else fimDeJogo">
+    <app-painel (encerrarJogo)="encerraJogo($event)"></app-painel>
+</div>
+
+<ng-template #fimDeJogo>
+    <div class="container" *ngIf="encerramentoJogo == 'derrota'; else fimDeJogoVitoria">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="jumbotron mt-5 text-center">
+                    <h1 class="display-4 text-warning">Fim de jogo!</h1>
+                    <p class="text-black-50">Infelizmente você esgotou suas chances :(</p>
+                    <hr class="my-4">
+                    <p class="lead">O que acha de fazer o teste novamente?</p>
+                    <button class="btn btn-primary btn-lg" role="button" (click)="reiniciarJogo()">Tentar de novo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #fimDeJogoVitoria>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="jumbotron mt-5 text-center">
+                    <h1 class="display-4 text-success">Fim de jogo!</h1>
+                    <p class="text-black-50">Parabéns você acertou as traduções :)</p>
+                    <hr class="my-4">
+                    <p class="lead">O que acha de fazer o teste novamente?</p>
+                    <button class="btn btn-primary btn-lg" role="button" (click)="reiniciarJogo()">Tentar de novo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASE } from './frase.mock';
 
@@ -22,7 +22,11 @@ export class PainelComponent implements OnInit {
   mostraErro: boolean = false;
 
   icones: string;
-
+  
+  @ViewChild('textos') textArea: ElementRef;
+  
+  @Output() encerrarJogo: EventEmitter<string> = new EventEmitter();
+  
   constructor() {
     //this.rodadaFrase = this.frases[this.rodada];         -> foi transformado em método por se repetir
     this.atualizaRodada();
@@ -41,12 +45,12 @@ export class PainelComponent implements OnInit {
       //atualiza a rodada
       this.rodada++;
 
-      if(this.rodada > 3) {
-        alert("PARABÉNS... Você concluiu com sucesso as traduções!")
+      if(this.rodada > 3) {                                     // acertou as traduções                     
+        this.encerrarJogo.emit('vitoria');                      // controla o template de vitoria ou derrota no app
       }
 
       //atualiza rodada
-      //this.rodadaFrase = this.frases[this.rodada];        -> foi transformado em método por se repetir
+      //this.rodadaFrase = this.frases[this.rodada];            -> foi transformado em método por se repetir
       this.atualizaRodada();
 
       //atualiza progresso
@@ -56,7 +60,7 @@ export class PainelComponent implements OnInit {
       this.mostraErro = false;
 
       //limpa textarea
-      this.respostas = ''
+      this.respostas = '';
       
     } else {
       //diminui numero de tentativas
@@ -67,8 +71,11 @@ export class PainelComponent implements OnInit {
 
       if(this.tentativa == -1) {                              // sem mais quantidade de tentativas
         this.respostas = '';
+        this.encerrarJogo.emit('derrota');                    // controla o template de vitoria ou derrota no app
       }
     }
+    //foco no textarea
+    this.textArea.nativeElement.focus();
   }
 
   atualizaRodada(): void {
