@@ -4,9 +4,12 @@
     background-color: $primary;
 
     a {
-        text-decoration: none !important;
+        text-decoration: none;
         color: $branco;
         padding: 0 10px;
+    }
+    a:hover {
+        text-decoration: underline;
     }
     b {
         font-size: 1.25em;
@@ -16,7 +19,7 @@
 }
 
 .nav-bottom {
-    background-color: #000;
+    background-color: $preto;
     color: $cinza;
 
     a {
