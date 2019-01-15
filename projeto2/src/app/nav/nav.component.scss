@@ -1,18 +1,39 @@
+@import '../../themes/variaveis.scss';
+
 .nav-top {
-    background-color: #5A30B5;
+    background-color: $primary;
 
     a {
         text-decoration: none !important;
-        color: #FFF;
+        color: $branco;
         padding: 0 10px;
+    }
+    b {
+        font-size: 1.25em;
+        color: $branco;
+        padding-right: 10px; 
     }
 }
 
 .nav-bottom {
     background-color: #000;
-    color: #CCC;
+    color: $cinza;
 
     a {
-        color: #CCC;
+        color: $cinza;
     }
 }
+
+.active > a{
+    color: $primary-dark;
+    font-weight: bold;
+}
+
+// @media only screen and (max-width: 600px) {
+//     .nav-top {
+//         background-color: red;
+//     }
+//     li {
+//         display: inline-flex; 
+//     }
+//   }

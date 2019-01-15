@@ -1,10 +1,11 @@
 <nav class="navbar navbar-expand-lg nav-top">
-  <a [routerLink]="['/']" class="navbar-brand"><b>Meat</b></a>
+  <span><b>Meat</b></span>
 
-  <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+  <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a [routerLink]="['/restaurants']">Restaurantes</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['/about']">Sobre</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/restaurantes']">Restaurantes</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/sobre']">Sobre</a></li>
     </ul>
   </div>   
 </nav>
