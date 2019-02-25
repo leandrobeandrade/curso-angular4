@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output, ElementRef } from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASE } from './frase.mock';
 
@@ -28,14 +28,22 @@ export class PainelComponent implements OnInit {
   @Output() encerrarJogo: EventEmitter<string> = new EventEmitter();
   
   constructor() {
-    //this.rodadaFrase = this.frases[this.rodada];         -> foi transformado em método por se repetir
+    //this.rodadaFrase = this.frases[this.rodada];              -> foi transformado em método por se repetir
     this.atualizaRodada();
     console.log(this.rodadaFrase);
   }
 
   atualizaResposta(evento: Event): void {
-    this.respostas  = (<HTMLInputElement>evento.target).value;
+    this.respostas  = (<HTMLInputElement>evento.target).value;  // pega o que foi digitado no textarea
     //console.log(this.respostas);
+
+    let textAreaValue = this.textArea.nativeElement.value;      // pega o texto do textarea
+    if(textAreaValue == '') this.mostraErro = false;            // esconde a mensagem de erro
+  }
+
+  limpaTextArea() {
+    this.respostas = '';
+    this.mostraErro = false;
   }
 
   verificaResposta(evento: Event): void {
@@ -69,9 +77,9 @@ export class PainelComponent implements OnInit {
       //mostra o alert de erro
       this.mostraErro = true;
 
-      if(this.tentativa == -1) {                              // sem mais quantidade de tentativas
+      if(this.tentativa == -1) {                                // sem mais quantidade de tentativas
         this.respostas = '';
-        this.encerrarJogo.emit('derrota');                    // controla o template de vitoria ou derrota no app
+        this.encerrarJogo.emit('derrota');                      // controla o template de vitoria ou derrota no app
       }
     }
     //foco no textarea

@@ -14,7 +14,7 @@
         <p *ngIf="rodada < 4">{{ rodadaFrase.fraseEng }}</p>
 
         <div class="form-group">
-          <textarea class="form-control" rows="3" (input)="atualizaResposta($event)"
+          <textarea class="form-control" rows="3" (input)="atualizaResposta($event)" (click)="limpaTextArea()"
             [value]="respostas" [disabled]="tentativa == -1" #textos>
           </textarea>
         </div>
@@ -24,7 +24,7 @@
       <div class="col">
         <span class="alert alert-danger" *ngIf="mostraErro">Tradução Errada</span>
         <button class="btn btn-primary float-right" (click)="verificaResposta()" 
-          [disabled]="respostas.length < 1">Verificar
+          [hidden]="respostas.length < 1">Verificar
         </button>
       </div>
     </div>

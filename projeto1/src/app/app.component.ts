@@ -11,13 +11,17 @@ export class AppComponent {
   encerramentoJogo: string;
   
   encerraJogo(tipo: string): void {
-    this.jogoEmAndamento = false;
-    this.encerramentoJogo = tipo;
+    setTimeout(() => {
+      this.jogoEmAndamento = false;
+      this.encerramentoJogo = tipo;
+    }, 700);
   }
 
   reiniciarJogo() {
-    this.jogoEmAndamento = true;
-    this.encerramentoJogo = undefined;
+    setTimeout(() => {
+      this.jogoEmAndamento = true;
+      this.encerramentoJogo = undefined;
+    }, 700)
   }
 
 }
