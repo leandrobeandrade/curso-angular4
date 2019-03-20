@@ -79,7 +79,6 @@
 * **Html:**
 
       <app-comp-passa-valor [valor]="valorInicial" (mudarValor)="mudandoValores($event)">
-        
       </app-comp-passa-valor>
       
 * **TS:**
