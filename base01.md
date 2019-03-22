@@ -35,23 +35,23 @@
 
 * **HTML:** 
 
-      <app-nome-comp [var-interna]="var-externa"></app-nome-comp>
+      <app-comp-filho [var-filha]="var-pai"></app-comp-filho>
       
 * **TS:** 
 
-      var-externa: any = 'O que quer ser passado';
+      var-pai: any = 'O que quer ser passado';
 
 **Componente (filho) que recebe um valor:**
 
 * **HTML:**
       
-      <p>{{ var-interna }}<p>
+      <p>{{ var-filha }}<p>
       
 * **TS:** 
 
-      @Input() var-interna: any;       // importar do @angular/core
+      @Input() var-filha: any;       // importar do @angular/core
 
-> **OBS: Quando o valor passado for hard-coded não precisa das chaves na variável interna.**
+> **OBS: Quando o valor passado for hard-coded não precisa das chaves na variável filha.**
 
 ## Output Properties
 
