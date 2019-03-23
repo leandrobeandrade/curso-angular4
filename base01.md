@@ -55,12 +55,12 @@
 
 ## Output Properties
 
-**Componente que emite um valor:**
+**Componente (filho) que emite um valor:**
 
 * **HTML:**
 
       <button (click)="incrementa()">+</button>
-      <input [value]="valor" type="text" readonly #campoInput>
+      <input [value]="valor" type="text" readonly>
 
 * **TS:** 
 
@@ -70,16 +70,15 @@
       incrementa() {
         this.valor++;
         this.mudarValor.emit({
-          novoValor: this.valor
+          novoValor: this.valor                 // valor já incrementado será guardado na variável novoValor
         });
       }
       
-**Componente que recebe o valor:**
+**Componente (pai) que recebe o valor:**
 
 * **Html:**
 
-      <app-comp-passa-valor [valor]="valorInicial" (mudarValor)="mudandoValores($event)">
-      </app-comp-passa-valor>
+      <app-comp-filho [valor]="valorInicial" (mudarValor)="mudandoValor($event)"></app-comp-filho>
       
 * **TS:**
 
