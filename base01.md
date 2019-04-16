@@ -78,7 +78,7 @@
 
 * **Html:**
 
-      <app-comp-filho [valor]="valorInicial" (mudarValor)="mudandoValor($event)"></app-comp-filho>
+      <app-comp-pai [valor]="valorInicial" (mudarValor)="mudandoValor($event)"></app-comp-pai>
       
 * **TS:**
 
