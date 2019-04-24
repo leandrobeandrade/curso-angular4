@@ -101,6 +101,8 @@
     valor() {
         console.log(this.campoValorInput);          		// mostra o valor no campo input
     }
+    
+> pode ser usado ElementRef para acessar a propriedade nativeElement
 
 ## Importar Bootstrap
 
