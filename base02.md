@@ -30,5 +30,3 @@
    * **Utilizar no Html:**
    
           <p> {{ texto | inverseText }} </p>
-          
-          
