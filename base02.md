@@ -33,3 +33,18 @@
 
 
 ## Hostlistener
+
+   * **Importar do core:**
+   
+         import { Component, OnInit, HostListener } from '@angular/core';
+         
+   * **Modo de uso:**
+   
+         @HostListener('document:mousemove', ['$event'])
+         onMouseMove() {
+            this.Alerta();
+         }
+         
+         Alerta() {
+            alert('Utilizando HostListener');
+         }
