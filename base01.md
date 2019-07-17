@@ -11,7 +11,7 @@
 
 ## Html
 
-* **Property binding:** [] + atributo Html. 
+* **Property binding:** [] + atributo Html.
 
       [class], [href], [img]
 
