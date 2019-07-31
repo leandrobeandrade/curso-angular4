@@ -1,4 +1,4 @@
-## App.module 
+## App.module
 
 * **BrowserModule:** Prepara a aplicação para rodar no browser.
 * **FormsModule:** Utilizado para formulários e a diretiva `[(ngmodel)]="teste"`.
