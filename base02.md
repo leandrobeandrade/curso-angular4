@@ -1,4 +1,4 @@
-## Criar um pipe pesrsonalizado:
+## Criar um pipe pesrsonalizado: 
 
    * **Gera o pipe:**
       
