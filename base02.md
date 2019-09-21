@@ -48,3 +48,42 @@
          Alerta() {
             alert('Utilizando HostListener');
          }
+         
+## Rotas
+
+  Arquivo onde serão setadas as rotas
+  * **app.routes.ts**
+  
+        import { HomeComponent } from './home/homee.component';          // importar componentes
+        import { AboutComponent } from './about/about.component';
+        
+        export const ROUTES: Routes = [
+          { path: 'home', component: HomeComponent },
+          { path: 'about' } component: AboutComponent }
+        ]
+        
+  
+  Arquivo de configuração das rotas
+  * **app-routing.module.ts**
+  
+        import { NgModule } from '@angular/core';
+        import { Routes, RouterModule } from '@angular/router';
+
+        const routes: Routes = [];
+
+        @NgModule({
+          imports: [RouterModule.forRoot(routes)],      <= Passa as rotas configuradas no arquivo app.routes.ts
+           exports: [RouterModule]
+        })
+        export class AppRoutingModule { }
+        
+  * **app.module.ts**
+  
+        import { ROUTES } from './app.routes'
+        
+        imports: [
+          BrowserModule,
+          AppRoutingModule,
+          RouterModule.forRoot(ROUTES)                  <= Passa as rotas
+        ]
+        
