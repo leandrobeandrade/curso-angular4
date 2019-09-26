@@ -105,6 +105,12 @@
         export class AppModule { }
         
   * **app.component.html**
+  
+        ontem: Date = new Date()
+       
+        ngOnInit() {
+          this.ontem.setDate(this.ontem.getDate() -1);
+        }
         
   * **app.component.html**
   
