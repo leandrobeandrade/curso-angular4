@@ -104,7 +104,7 @@
         })
         export class AppModule { }
         
-  * **app.component.html**
+  * **app.component.ts**
   
         ontem: Date = new Date()
        
