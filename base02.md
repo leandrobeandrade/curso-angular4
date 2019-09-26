@@ -87,3 +87,25 @@
           RouterModule.forRoot(ROUTES)                  <= Passa as rotas
         ]
         
+## Pipe para data em português
+  
+  * **app.module.ts**
+
+        import { NgModule, LOCALE_ID } from '@angular/core';
+        ...
+
+        import { registerLocaleData } from '@angular/common';
+        import ptBr from '@angular/common/locales/pt';
+        registerLocaleData(ptBr)
+
+        @NgModule({
+            ...
+            providers: [{ provide: LOCALE_ID, useValue: 'pt-PT' }],
+        })
+        export class AppModule { }
+        
+  * **app.component.html**
+        
+  * **app.component.html**
+  
+        {{ontem | date}}
