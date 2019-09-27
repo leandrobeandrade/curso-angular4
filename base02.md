@@ -114,4 +114,4 @@
         
   * **app.component.html**
   
-        {{ontem | date}}
+        {{ ontem | date }}
