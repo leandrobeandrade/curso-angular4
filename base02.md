@@ -115,3 +115,5 @@
   * **app.component.html**
   
         {{ ontem | date }}
+        
+  mais...
