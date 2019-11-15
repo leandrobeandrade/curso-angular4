@@ -1,9 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Oferta } from './shared/oferta.model';
-import { resolve } from 'url';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class OfertasService {
 
-    public ofertas: Array<Oferta> = [
+    // foi para o arquivo banco-de-dados.json
+    /*public ofertas: Array<Oferta> = [
         {
             id: 1,
             categoria: "restaurante",
@@ -52,7 +55,7 @@ export class OfertasService {
                 {url: "/assets/ofertas/3/img6.jpg"}
             ]
         }
-    ]
+    ] */
 
     // chamada direta
     /* public getOfertas(): Array<Oferta> {
@@ -60,7 +63,7 @@ export class OfertasService {
     } */
 
     // chamada com Promisse
-    public getOfertas(): Promise <Oferta[]> {
+    /* public getOfertas(): Promise <Oferta[]> {
         return new Promise((resolve, reject) => {
             let retorno = false;  // retorno da api
 
@@ -70,5 +73,12 @@ export class OfertasService {
                 msg_erro: 'Produtos não encontrados!'
             })
         })
+    } */
+
+    constructor(private http: HttpClient) {}
+
+    public getOfertas(): Promise<Oferta[]> {
+        return this.http.get('./assets/banco-de-dados.json').toPromise()
+        .then((resposta: Oferta[]) => resposta)
     }
 }

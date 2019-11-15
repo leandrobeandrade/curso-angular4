@@ -10,6 +10,7 @@ import { Oferta } from '../shared/oferta.model';
 })
 export class HomeComponent implements OnInit {
   public ofertas: Oferta[];
+  public origin: any;
 
   constructor(private ofertasService: OfertasService) { }
 
@@ -20,8 +21,11 @@ export class HomeComponent implements OnInit {
 
     // chamada com Promisse
     this.ofertasService.getOfertas()
-    .then((ofertas: Oferta[]) => this.ofertas = ofertas) // resolve
-        //,(param: any) => console.log(param)           // reject ou no catch()
+    .then((ofertas: Oferta[]) => {          // resolve
+      this.origin = ofertas;
+      this.ofertas = this.origin.ofertas;
+    })
+    //,(param: any) => console.log(param)           // reject ou no catch()
     .catch((param: any) => console.log(param)
     )
   }
