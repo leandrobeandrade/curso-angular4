@@ -77,8 +77,34 @@ export class OfertasService {
 
     constructor(private http: HttpClient) {}
 
-    public getOfertas(): Promise<Oferta[]> {
+    // chamada com Promisse mocado
+    /* public getOfertas(): Promise<Oferta[]> {
         return this.http.get('./assets/banco-de-dados.json').toPromise()
         .then((resposta: Oferta[]) => resposta)
+    } */
+
+    public getOfertas() {
+        return this.http.get('http://localhost:3000/ofertas')
+    }
+
+    public getOfertasCategoria(categoria: string) {
+        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
     }
 }
+
+
+/* 
+
+json-server
+===========
+
+npm instal json-server -g
+
+no terminal => 
+                apontar para o local do arquivo
+                executar json-server --watch arquivo.json
+
+roda na porta localhost:3000
+
+
+*/

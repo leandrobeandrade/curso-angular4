@@ -19,15 +19,17 @@ export class HomeComponent implements OnInit {
     /* this.ofertas = this.ofertasService.getOfertas();
     console.log(this.ofertas); */
 
-    // chamada com Promisse
-    this.ofertasService.getOfertas()
+    // chamada com Promisse mocado
+    /* this.ofertasService.getOfertas()
     .then((ofertas: Oferta[]) => {          // resolve
       this.origin = ofertas;
       this.ofertas = this.origin.ofertas;
     })
     //,(param: any) => console.log(param)           // reject ou no catch()
     .catch((param: any) => console.log(param)
-    )
+    ) */
+
+    this.ofertasService.getOfertas().subscribe((ofertas: Oferta[]) => this.ofertas = ofertas)
   }
 
 }
