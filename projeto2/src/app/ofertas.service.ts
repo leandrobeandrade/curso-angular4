@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Oferta } from './shared/oferta.model';
 import { Injectable } from '@angular/core';
+import { URL_API, URL_API_COMO_USAR, URL_API_ONDE_FICA } from './app.api';
+import { Observable } from 'rxjs';
+//import 'rxjs/add/operator/map';
 
 @Injectable()
 export class OfertasService {
@@ -84,11 +87,28 @@ export class OfertasService {
     } */
 
     public getOfertas() {
-        return this.http.get('http://localhost:3000/ofertas')
+        return this.http.get<Oferta[]>(URL_API)
     }
 
     public getOfertasCategoria(categoria: string) {
-        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
+        return this.http.get<Oferta[]>(`${URL_API}?categoria=${categoria}`)
+    }
+
+    public getOfertaPorId(id: number) {
+        return this.http.get<Oferta[]>(`${URL_API}?id=${id}`)
+    }
+
+    public getComoUsarOfertaPorId(id: number) {
+        return this.http.get(`${URL_API_COMO_USAR}?id=${id}`)
+    }
+
+    public getOndeFicaOfertaPorId(id: number) {
+        return this.http.get(`${URL_API_ONDE_FICA}?id=${id}`)
+    }
+
+    public pesquisaOferta(termo: string): Observable<Oferta[]> {
+        return this.http.get<Oferta[]>(`${URL_API}?descricao_oferta_like=${termo}`)
+        .pipe((resposta: any) => resposta);
     }
 }
 
@@ -106,5 +126,5 @@ no terminal =>
 
 roda na porta localhost:3000
 
-
+_like => filtra os dados por palavra e não por toda a string no banco-de-dados.json
 */
