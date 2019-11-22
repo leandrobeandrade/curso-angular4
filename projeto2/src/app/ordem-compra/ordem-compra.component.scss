@@ -1,0 +1,34 @@
+.ordem-compra {
+    margin-top: 30px;
+    margin-bottom: 70px;
+
+    .form-row {
+        background: #FAFAFA; 
+        padding: 20px; 
+        border-bottom: solid 1px #F0F0F0;
+    }
+
+    .btn-link {
+        text-decoration: none;
+    }
+
+    .menos {
+        border: solid 1px red;
+        color: red;
+    }
+
+    .menos:hover {
+        background-color: red;
+        color: #fff;
+    }
+
+    .mais {
+        border: solid 1px blue;
+        color: blue;
+    }
+
+    .mais:hover {
+        background-color: blue;
+        color: #fff;
+    }
+}

@@ -16,7 +16,14 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar ofertas..." 
       #termoPesquisa (input)="pesquisa(termoPesquisa.value)" aria-label="Pesquisar">
     </form>
-  </div>   
+  </div>
+  <ul class="list-group" *ngIf="termoPesquisa.value.length > 2">
+    <li class="list-group-item" *ngFor="let oferta of ofertas">
+      <a class="_a" [routerLink]="['/oferta', oferta.id]" (click)="termoPesquisa.value = ''">
+        {{ oferta.descricao_oferta | descricaoReduzida}}
+      </a>
+    </li>
+  </ul> 
 </nav>
 
 <!--FOOTER-->

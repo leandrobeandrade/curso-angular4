@@ -109,6 +109,8 @@ export class OfertasService {
     public pesquisaOferta(termo: string): Observable<Oferta[]> {
         return this.http.get<Oferta[]>(`${URL_API}?descricao_oferta_like=${termo}`)
         .pipe((resposta: any) => resposta);
+        //.retry(10) --- curso não funcionou
+        //.map((resposta: any) => resposta.json()) --- curso não funcionou
     }
 }
 

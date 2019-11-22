@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 // Rotas filhas
@@ -23,5 +24,6 @@ export const ROUTES: Routes = [
             {path: 'onde-fica', component: OndeFicaComponent}
         ]
     },
+    {path: 'ordem-compra', component: OrdemCompraComponent},
     {path: 'sobre', component: SobreComponent},
 ]

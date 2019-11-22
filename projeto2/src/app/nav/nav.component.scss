@@ -30,10 +30,19 @@
     }
 }
 
-.active > a{
+.active > a {
     color: $primary-dark;
     font-weight: bold;
 }
+
+ul {
+    position: relative;
+
+   ._a {
+        color: blue;
+    }
+}
+
 
 // @media only screen and (max-width: 600px) {
 //     .nav-top {
