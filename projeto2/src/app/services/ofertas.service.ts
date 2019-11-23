@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Oferta } from './shared/oferta.model';
+import { Oferta } from '../shared/oferta.model';
 import { Injectable } from '@angular/core';
-import { URL_API, URL_API_COMO_USAR, URL_API_ONDE_FICA } from './app.api';
+import { URL_API, URL_API_COMO_USAR, URL_API_ONDE_FICA } from '../app.api';
 import { Observable } from 'rxjs';
 //import 'rxjs/add/operator/map';
 
