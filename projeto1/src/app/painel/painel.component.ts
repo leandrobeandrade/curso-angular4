@@ -46,7 +46,7 @@ export class PainelComponent implements OnInit {
     this.mostraErro = false;
   }
 
-  verificaResposta(evento: Event): void {
+  verificaResposta(): void {
 
     if(this.rodadaFrase.frasePt == this.respostas) {
     

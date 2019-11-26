@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Oferta } from '../shared/oferta.model';
 import { Injectable } from '@angular/core';
-import { URL_API, URL_API_COMO_USAR, URL_API_ONDE_FICA } from '../app.api';
+import { URL_API_OFERTAS, URL_API_COMO_USAR, URL_API_ONDE_FICA } from '../app.api';
 import { Observable } from 'rxjs';
 //import 'rxjs/add/operator/map';
 
@@ -87,15 +87,15 @@ export class OfertasService {
     } */
 
     public getOfertas() {
-        return this.http.get<Oferta[]>(URL_API)
+        return this.http.get<Oferta[]>(URL_API_OFERTAS)
     }
 
     public getOfertasCategoria(categoria: string) {
-        return this.http.get<Oferta[]>(`${URL_API}?categoria=${categoria}`)
+        return this.http.get<Oferta[]>(`${URL_API_OFERTAS}?categoria=${categoria}`)
     }
 
     public getOfertaPorId(id: number) {
-        return this.http.get<Oferta[]>(`${URL_API}?id=${id}`)
+        return this.http.get<Oferta[]>(`${URL_API_OFERTAS}?id=${id}`)
     }
 
     public getComoUsarOfertaPorId(id: number) {
@@ -107,7 +107,7 @@ export class OfertasService {
     }
 
     public pesquisaOferta(termo: string): Observable<Oferta[]> {
-        return this.http.get<Oferta[]>(`${URL_API}?descricao_oferta_like=${termo}`)
+        return this.http.get<Oferta[]>(`${URL_API_OFERTAS}?descricao_oferta_like=${termo}`)
         .pipe((resposta: any) => resposta);
         //.retry(10) --- curso não funcionou
         //.map((resposta: any) => resposta.json()) --- curso não funcionou
