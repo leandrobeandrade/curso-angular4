@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { ROUTES } from './app.routes';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,20 +15,33 @@ import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { Auth } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard.service';
+import { Bd } from './services/bd.service';
+
+import { HomeComponent } from './home/home.component';
+import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
+import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AcessoComponent,
     BannerComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    HomeComponent,
+    PublicacoesComponent,
+    IncluirPublicacaoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ Auth, AuthGuard, Bd ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
