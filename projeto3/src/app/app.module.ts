@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Auth } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard.service';
 import { Bd } from './services/bd.service';
+import { Progresso } from './services/progresso.service';
 
 import { HomeComponent } from './home/home.component';
 import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
@@ -41,7 +42,7 @@ import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-pu
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ Auth, AuthGuard, Bd ],
+  providers: [ Auth, AuthGuard, Bd, Progresso ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
