@@ -8,7 +8,8 @@ Realizado por Jorge Sant Ana na plataforma Udemy.
 ## Projetos
 
 - **Quiz tradução -** Projeto de tradução de palavras utilizando Angular e Bootstrap
-- **Chat Real Time -** Projeto de ...
+- **Passaro Urbano -** Projeto simulando uma aplicação para comprar itens utilizando Angular e json-server
 - **Jogo GOT -** Projeto ...
 
-![](https://github.com/leandrobeandrade/curso-angular4/blob/translate/.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/translate/.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro/.png)
