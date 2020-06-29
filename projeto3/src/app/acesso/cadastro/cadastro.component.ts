@@ -10,7 +10,7 @@ import { Auth } from '../../services/auth.service';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit {
-  public errors: boolean = false;
+  public errors = false;
   
   @Output() exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 

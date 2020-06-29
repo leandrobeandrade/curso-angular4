@@ -13,4 +13,3 @@ Realizado por Jorge Sant Ana na plataforma Udemy.
 
 ![](https://github.com/leandrobeandrade/curso-angular4/blob/master/translate.png)
 ![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro.png)
-![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro.png)

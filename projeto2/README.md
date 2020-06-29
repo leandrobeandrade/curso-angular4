@@ -1,6 +1,6 @@
-# Quiz de tradução de perguntas
+# Passaro Urbano
 
-Projeto simples simulando um quiz de perguntas em inglês com traduções para o português.
+Projeto simples simulando um aplicação de compras online.
 
 ## Tecnologias
 
