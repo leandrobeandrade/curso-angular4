@@ -1,6 +1,6 @@
 # Instagram clone
 
-Projeto simples simulando a rede social Instagram integrando com o Firebase.
+Projeto simples simulando a rede social Instagram integrando com o serviço Firebase.
 
 ## Tecnologias
 

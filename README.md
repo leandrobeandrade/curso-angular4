@@ -9,7 +9,8 @@ Realizado por Jorge Sant Ana na plataforma Udemy.
 
 - **Quiz tradução -** Projeto de tradução de palavras utilizando Angular e Bootstrap
 - **Passaro Urbano -** Projeto simulando uma aplicação para comprar itens utilizando Angular e json-server
-- **Jogo GOT -** Projeto ...
+- **Instagram clone -** Projeto simulando a rede social Instagram utilizando Angular e Firebase
 
 ![](https://github.com/leandrobeandrade/curso-angular4/blob/master/translate.png)
 ![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/instagram.png)
