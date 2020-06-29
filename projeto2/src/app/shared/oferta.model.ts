@@ -6,5 +6,9 @@ export class Oferta {
     public anunciante: string;
     public valor: number;
     public destaque: boolean;
-    public imagens: Array<object>
+    public imagens: Array<Imagens>;
+}
+
+export class Imagens {
+    public url: string;
 }

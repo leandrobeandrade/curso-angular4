@@ -18,6 +18,6 @@ Projeto simples simulando um quiz de perguntas em inglês com traduções para o
 - Rodar api fake: json-server --watch banco-de-dados.json
 
 ![](https://github.com/leandrobeandrade/curso-angular4/blob/master/projeto2/home.png)
-![](https://github.com/leandrobeandrade/curso-angular4/blob/master/projeto2/oferta.png)
-![](https://github.com/leandrobeandrade/curso-angular4/blob/master/projeto2/detalhe.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/projeto2/ofertas.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/projeto2/detalhes.png)
 ![](https://github.com/leandrobeandrade/curso-angular4/blob/master/projeto2/carrinho.png)

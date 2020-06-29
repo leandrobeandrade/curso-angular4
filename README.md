@@ -11,5 +11,6 @@ Realizado por Jorge Sant Ana na plataforma Udemy.
 - **Passaro Urbano -** Projeto simulando uma aplicação para comprar itens utilizando Angular e json-server
 - **Jogo GOT -** Projeto ...
 
-![](https://github.com/leandrobeandrade/curso-angular4/blob/master/translate/.png)
-![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro/.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/translate.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro.png)
+![](https://github.com/leandrobeandrade/curso-angular4/blob/master/passaro.png)
